@@ -5,7 +5,9 @@ Serial myPort; // define a serial port object to monitor
 // Define initial "time" coordinates of cursor location 
 int x = 0;
 
+// Data table and filename specifications
 Table table;
+String title = month()+"."+day()+"-"+hour()+"h"+minute()+"m-"+second()+"s"+".csv";
 
 void setup() {
   size(1200, 612); // set the window size
@@ -65,6 +67,9 @@ if (xyzaRaw.length == 2) {
 }
 
  // Save data to data.csv file on local computer
- saveTable(table, "data.csv");
+ //saveTable(table, "data.csv");
+ 
+ // Save file to .csv file containing month, day, hour, minute, and second
+ saveTable(table, title);
 
 }
